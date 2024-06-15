@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import commingsoon from "../assets/images/commingsoon.jpg";
 import { useTitle } from "../hooks/useTitle";
+import { Link } from "react-router-dom";
 
 export const MovieDetail = ({ title }) => {
   const params = useParams();
@@ -27,7 +28,7 @@ export const MovieDetail = ({ title }) => {
     fetchMovie();
   }, []);
 
-  const pageTitle = useTitle(movie.title);
+  useTitle(movie.title);
 
   return (
     <main>
